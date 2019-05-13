@@ -50,6 +50,7 @@
     NSString *token = dictionary[@"token"];
     NSString *applicantId = dictionary[@"applicantId"];
     NSArray *documentTypes =dictionary[@"documentTypes"];
+    NSString *variant = dictionary[@"variant"];
 
     ONFlowConfigBuilder *configBuilder = [ONFlowConfig builder];
     [configBuilder withToken:token];
@@ -60,7 +61,11 @@
         [configBuilder withDocumentStep];
     }
 
-    [configBuilder withFaceStepOfVariant:ONFaceStepVariantPhoto];
+    if (variant == "video") {
+        [configBuilder withFaceStepOfVariant:ONFaceStepVariantVideo];
+    } else {
+        [configBuilder withFaceStepOfVariant:ONFaceStepVariantPhoto];
+    }
     
     NSError *configError = NULL;
     ONFlowConfig *config = [configBuilder buildAndReturnError:&configError];
