@@ -45,4 +45,5 @@ repositories {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
     implementation 'com.onfido.sdk.capture:onfido-capture-sdk:+'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
 }
