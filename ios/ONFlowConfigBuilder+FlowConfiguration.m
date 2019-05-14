@@ -61,7 +61,7 @@
         [configBuilder withDocumentStep];
     }
 
-    if (variant == "video") {
+    if (variant == @"video") {
         [configBuilder withFaceStepOfVariant:ONFaceStepVariantVideo];
     } else {
         [configBuilder withFaceStepOfVariant:ONFaceStepVariantPhoto];
