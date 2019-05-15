@@ -2,20 +2,6 @@
 
 iOS and Android wrapper for [onfido-ios-sdk](https://github.com/onfido/onfido-ios-sdk) and [onfido-android-sdk](https://github.com/onfido/onfido-android-sdk).
 
-## Installation
-
-Install the npm package
-
-```bash
-  npm install react-native-onfido-sdk
-```
-
-or
-
-```bash
-  yarn add react-native-onfido-sdk
-```
-
 ### iOS Setup
 
 If you're already using Cocoapods, add the following to your Podfile
@@ -164,31 +150,7 @@ const errorCallback = (error) => {
 }
 ```
 
-## Example
-
-To see more of `react-native-onfido-sdk` in action you can check out the source in the `example` folder.
-
-```bash
-cd example
-npm install
-```
-
-### iOS
-
-```bash
-cd ios
-pod install
-cd ..
-react-native run-ios
-```
-
-### Android
-
-```bash
-react-native run-android
-```
-
-##PUBLISH on feedz
+## PUBLISH on feedz
 
 Before uploading, searching or installing packages on each machine, you will need to authenticate using a personal access token, as explained thoroughly in this [guide](https://feedz.io/docs/package-types/npm)
 
