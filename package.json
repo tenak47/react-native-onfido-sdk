@@ -1,5 +1,5 @@
 {
-  "name": "@lykkecorp/react-native-onfido-sdk",
+  "name": "react-native-onfido-sdk",
   "version": "0.0.8",
   "description": "Onfido SDK for React Native",
   "main": "index.js",
