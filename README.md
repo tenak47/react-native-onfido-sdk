@@ -150,7 +150,7 @@ const errorCallback = (error) => {
 }
 ```
 
-## PUBLISH on feedz
+## Publish on feedz
 
 Before uploading, searching or installing packages on each machine, you will need to authenticate using a personal access token, as explained thoroughly in this [guide](https://feedz.io/docs/package-types/npm)
 
