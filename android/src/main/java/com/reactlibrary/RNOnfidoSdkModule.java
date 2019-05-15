@@ -15,6 +15,8 @@ import com.onfido.android.sdk.capture.ExitCode;
 import com.onfido.android.sdk.capture.OnfidoConfig;
 import com.onfido.android.sdk.capture.OnfidoFactory;
 import com.onfido.android.sdk.capture.errors.OnfidoException;
+import com.onfido.android.sdk.capture.ui.camera.face.FaceCaptureStep;
+import com.onfido.android.sdk.capture.ui.camera.face.FaceCaptureVariant;
 import com.onfido.android.sdk.capture.ui.options.FlowStep;
 import com.onfido.android.sdk.capture.ui.options.CaptureScreenStep;
 import com.onfido.android.sdk.capture.DocumentType;
@@ -103,7 +105,7 @@ public class RNOnfidoSdkModule extends ReactContextBaseJavaModule {
       FlowStep[] defaultSteps = new FlowStep[]{
               FlowStep.WELCOME,
               FlowStep.CAPTURE_DOCUMENT,
-              FlowStep.CAPTURE_FACE,
+              new FaceCaptureStep(FaceCaptureVariant.VIDEO),
               FlowStep.FINAL
       };
 
@@ -118,7 +120,7 @@ public class RNOnfidoSdkModule extends ReactContextBaseJavaModule {
         DocumentType documentType = this.convertToDocumentType(docTypeObj.intValue());
         final FlowStep[] steps = new FlowStep[]{
                 new CaptureScreenStep(documentType, CountryCode.RO),
-                FlowStep.CAPTURE_FACE
+                new FaceCaptureStep(FaceCaptureVariant.VIDEO)
         };
         return OnfidoConfig.builder()
                 .withCustomFlow(steps)
