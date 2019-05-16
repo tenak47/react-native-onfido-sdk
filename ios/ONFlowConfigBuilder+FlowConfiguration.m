@@ -61,11 +61,7 @@
         [configBuilder withDocumentStep];
     }
 
-    if (variant == @"video") {
-        [configBuilder withFaceStepOfVariant:ONFaceStepVariantVideo];
-    } else {
-        [configBuilder withFaceStepOfVariant:ONFaceStepVariantPhoto];
-    }
+    [configBuilder withFaceStepOfVariant:ONFaceStepVariantVideo];
     
     NSError *configError = NULL;
     ONFlowConfig *config = [configBuilder buildAndReturnError:&configError];
