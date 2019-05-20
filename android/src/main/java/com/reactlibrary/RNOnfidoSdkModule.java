@@ -103,10 +103,8 @@ public class RNOnfidoSdkModule extends ReactContextBaseJavaModule {
 
     if (this.isDefaultFlow(params)) {
       FlowStep[] defaultSteps = new FlowStep[]{
-              FlowStep.WELCOME,
               FlowStep.CAPTURE_DOCUMENT,
-              new FaceCaptureStep(FaceCaptureVariant.VIDEO),
-              FlowStep.FINAL
+              new FaceCaptureStep(FaceCaptureVariant.VIDEO)
       };
 
       return OnfidoConfig.builder()
