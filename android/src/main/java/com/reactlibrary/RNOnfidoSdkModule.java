@@ -17,10 +17,10 @@ import com.onfido.android.sdk.capture.OnfidoFactory;
 import com.onfido.android.sdk.capture.errors.OnfidoException;
 import com.onfido.android.sdk.capture.ui.camera.face.FaceCaptureStep;
 import com.onfido.android.sdk.capture.ui.camera.face.FaceCaptureVariant;
+import com.onfido.android.sdk.capture.ui.country_selection.CountryAlternatives;
 import com.onfido.android.sdk.capture.ui.options.FlowStep;
 import com.onfido.android.sdk.capture.ui.options.CaptureScreenStep;
 import com.onfido.android.sdk.capture.DocumentType;
-import com.onfido.android.sdk.capture.utils.CountryCode;
 import com.onfido.api.client.data.Applicant;
 import com.onfido.android.sdk.capture.upload.Captures;
 
@@ -117,7 +117,7 @@ public class RNOnfidoSdkModule extends ReactContextBaseJavaModule {
         Double docTypeObj = (Double)documentTypes.get(0);
         DocumentType documentType = this.convertToDocumentType(docTypeObj.intValue());
         final FlowStep[] steps = new FlowStep[]{
-                new CaptureScreenStep(documentType, CountryCode.RO),
+                new CaptureScreenStep(documentType, CountryAlternatives.NO_COUNTRY),
                 new FaceCaptureStep(FaceCaptureVariant.VIDEO)
         };
         return OnfidoConfig.builder()
