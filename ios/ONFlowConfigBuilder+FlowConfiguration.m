@@ -70,7 +70,11 @@
         [configBuilder withDocumentStep];
     }
 
-    [configBuilder withFaceStepOfVariant:ONFaceStepVariantVideo];
+    NSError * error;
+    Builder * variantBuilder = [ONFaceStepVariantConfig builder];
+    [variantBuilder withVideoCaptureWithConfig:
+    [[VideoStepConfiguration alloc] initWithShowIntroVideo: YES]];
+    [configBuilder withFaceStepOfVariant: [variantBuilder buildAndReturnError: &error]];
   
     if ([primaryColor length] > 0) {
       ONAppearance *appearance = [[ONAppearance alloc]
