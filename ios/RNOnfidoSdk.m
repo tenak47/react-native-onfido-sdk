@@ -30,6 +30,10 @@ RCT_EXPORT_MODULE();
                  };
     };
 
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
+}
     
 RCT_EXPORT_METHOD(startSDK:(id)json successCallback:(RCTResponseSenderBlock)successCallback errorCallback:(RCTResponseErrorBlock)errorCallback) {
     RNOnfidoSdk *sdk = [[RNOnfidoSdk alloc] initWithParams:json successCallback:successCallback errorCallback:errorCallback];
