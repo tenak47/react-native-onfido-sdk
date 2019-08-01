@@ -72,8 +72,7 @@
 
     NSError * error;
     Builder * variantBuilder = [ONFaceStepVariantConfig builder];
-    [variantBuilder withVideoCaptureWithConfig:
-    [[VideoStepConfiguration alloc] initWithShowIntroVideo: YES]];
+    [variantBuilder withPhotoCaptureWithConfig: NULL];
     [configBuilder withFaceStepOfVariant: [variantBuilder buildAndReturnError: &error]];
   
     if ([primaryColor length] > 0) {
